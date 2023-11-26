@@ -1,2 +1,8 @@
 <h1>Admin::Dashboard#show</h1>
-<p>Find me in app/views/admin/dashboard/show.html.erb</p>
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Dashboard Stats:</h5>
+    <p class="card-text">Number of Products: <span class="badge bg-secondary"><%= @products_count %></span></p>
+    <p class="card-text">Number of Categories: <span class="badge bg-secondary"><%= @categories_count %></span></p>
+  </div>
+</div>
