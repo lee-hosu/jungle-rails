@@ -1,0 +1,23 @@
+<h1>New Category</h1>
+
+<%= form_with(model: [ :admin, @category ], local: true, class: 'form-inline') do |form| %>
+  <% if @category.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger">
+      <h2><%= pluralize(@category.errors.count, "error") %> prohibited this category from being saved:</h2>
+      <ul>
+        <% @category.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group mb-2">
+    <%= form.label :name, class: 'sr-only' %>
+    <%= form.text_field :name, id: :category_name, class: 'form-control', placeholder: 'Category name' %>
+  </div>
+
+  <button type="submit" class="btn btn-primary mb-2 ml-2">Create</button>
+<% end %>
+
+<%= link_to 'Back to Categories List', admin_categories_path, class: 'btn btn-outline-info mt-2' %>
